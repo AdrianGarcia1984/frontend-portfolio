@@ -1,7 +1,9 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { getCharacter, getPeople, searchCharacter } from '../../services/apiRickAndMorty';
+import { useTranslation } from 'react-i18next';
 
 const RickAndMortyApp = () => {
+  const {t}= useTranslation()
   const inputRef = useRef(null)
   const [people, setPeople] = useState([])
   const [errorState, setErrorState] = useState({ hassError: false })
@@ -59,10 +61,10 @@ const RickAndMortyApp = () => {
   //console.log(detail)
   return (
     <>
-    <h1 className='text-2xl text-gray-800 font-bold mb-4 '>APLICACION DE RICK AND MORTY</h1>
-            <p className='text-gray-500 md:text-left m-2'>Busca tu personaje favorito en la API de Rick and Morty</p>
-            <p className='text-gray-500 md:text-left m-2'>En esta parte se consume la API de RICK and MORTY y se renderiza en una pequeña Card.</p>
-            <p className='text-gray-500 md:text-left m-2'>Tecnologias: TailwindCSS, reactJS, JavaScript</p>
+    <h1 className='text-2xl text-gray-800 font-bold mb-4 '>{t("api.title")}</h1>
+            <p className='text-gray-500 md:text-left m-2'>{t("api.description")}</p>
+            <p className='text-gray-500 md:text-left m-2'>{t("api.description2")}</p>
+            <p className='text-gray-500 md:text-left m-2'>{t("api.tech")}</p>
     <div className='py-8 mx-8 flex flex-col md:max-w-xl md:flex-row '>
       <div className="md:w-1/3 mr-3">
         <input
@@ -70,7 +72,7 @@ const RickAndMortyApp = () => {
         type='text' ref={inputRef}
           onChange={onChangeTextSearch}
           onKeyDown={onSearchSubmit}
-          placeholder="busca un personaje"></input>
+          placeholder={t("api.find")}></input>
         <ul>
           {errorState.hassError && <div>{errorState.message}</div>}
           {people?.results?.map(character => (

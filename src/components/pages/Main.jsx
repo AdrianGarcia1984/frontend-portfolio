@@ -7,6 +7,7 @@ import maven from "../../assets/apachemaven.svg"
 import postman from "../../assets/postman.svg"
 import appium from "../../assets/appium.svg"
 import golang from "../../assets/golang.svg"
+import { useTranslation } from 'react-i18next'
 
 
 const skills = [
@@ -93,6 +94,7 @@ const skills = [
 ]
 
 const Main = () => {
+  const {t}=useTranslation()
   return (
     <section className="py-8">
 
@@ -100,9 +102,9 @@ const Main = () => {
       <div className="flex flex-wrap md:px-4">
         <div className="w-full">
           <div className="md:mx-4">
-            <h3 className="text-2xl text-gray-800 font-bold mb-4">Quien soy?</h3>
+            <h3 className="text-2xl text-gray-800 font-bold mb-4">{t("home.who")}?</h3>
             <p className="text-sm text-gray-500 leading-6 text-justify mb-3 ">
-              Apasionado por la tecnologia y la programación, desde el año 2022 en el rol del desarrollo web, tecnologo en sistemas desde el 2014, graduado del SENA, con diplomado en desarrollo web FullStack, QA-Automation, y diferentes cursos que me han permitido adquirir conocimientos en el mundo del desarrollo de software.
+            {t("home.about")}
             </p>
             <h3 className="text-2xl text-gray-800 font-bold mb-4">Skills</h3>
 
@@ -112,7 +114,7 @@ const Main = () => {
           ))}
              </ul>
             <p className="text-sm text-gray-500 leading-6 mb-3 text-justify">
-                Ademas de esto, despues de trabajar 21 años en el INPEC, 8 de estos años fui el lider en la oficina de sistemas de una de sus sedes, lo cual me permite tener la experiencia demostrable en campos como la administracion de sistemas, administracion del recurso humano, redes locales de comunicación (planificacion, ejecución, configuración, puesta en marcha y mantenimiento), administracion de bases de datos de oracle (diplomado certificado con la Universidad Cooperativa de Colombia), entre otros conocimientos relacionados con el mantenimiento de computadores, etc.
+            {t("home.about2")}
             </p>
           </div>
         </div>

@@ -1,0 +1,56 @@
+{
+    "sidebar":{
+        "title":"Desarrollador web Full Stack y QA-Automation",
+        "about":"sobre mi",
+        "description":"Desarrollador web fullstack y QA-Automation, entusiasta de aprender y superar mis conocimientos, me encanta aprender algo nuevo todos los dias",
+        "btn":"descargar curriculum"
+    },
+    "home":{
+        "who":"Quien soy",
+        "about":"Apasionado por la tecnologia y la programación, desde el año 2022 en el rol del desarrollo web, tecnologo en sistemas desde el 2014, graduado del SENA, con diplomado en desarrollo web FullStack, QA-Automation, y diferentes cursos que me han permitido adquirir conocimientos en el mundo del desarrollo de software.",
+        "about2":"Ademas de esto, despues de trabajar 21 años en el INPEC, 8 de estos años fui el lider en la oficina de sistemas de una de sus sedes, lo cual me permite tener la experiencia demostrable en campos como la administracion de sistemas, administracion del recurso humano, redes locales de comunicación (planificacion, ejecución, configuración, puesta en marcha y mantenimiento), administracion de bases de datos de oracle (diplomado certificado con la Universidad Cooperativa de Colombia), entre otros conocimientos relacionados con el mantenimiento de computadores, etc."
+    },
+    "navbar":{
+        "home":"Home",
+        "proyects":"Proyectos",
+        "contact":"Contacto",
+        "users":"Usuarios",
+        "api":"Api",
+        "more":"Mas proyectos"
+    },
+    "contact":{
+        "title":"Contacto",
+        "legend":"Te agradezco por querer contactarme, espero tu mensaje.",
+        "name":"nombre",
+        "email":"correo",
+        "message":"mensaje",
+        "btn":"enviar"
+    },
+    "users":{
+        "title":"APLICACION DE REGISTRO DE USUARIOS",
+        "text1":"Pequeña aplicacion CRUD de registro de usuarios.",
+        "text2":"Descripción: Aplicación conectada a un Backend es desarrollado en GO con Fiber como framework, la cual se conecta a una base de datos desplegada en Mongo-DB.",
+        "tech":"Tecnologias: GO, ReactJs, Javascript, TailwindCSS, MongoDB.",
+        "register":"Registro",
+        "name":"Nombre",
+        "email":"Correo",
+        "btn":"Guardar",
+        "titletable":"Tabla de Usuarios Registrados",
+        "date":"Fecha Creación",
+        "action":"Acción"
+    },
+    "api":{
+        "title":"APLICACION DE RICK AND MORTY",
+        "description":"Busca tu personaje favorito en la API de Rick and Morty.",
+        "description2":"En esta parte se consume la API de RICK and MORTY y se renderiza en una pequeña Card.",
+        "tech":"Tecnologias: TailwindCSS, reactJS, JavaScript.",
+        "find":"Busca un personaje"
+    },
+    "footer":{
+        "developed":"desarrollado por"
+    },
+    "loading":{
+        "message1":"recuperando archivos del servidor",
+        "message2":"si,  esta tardando mas de lo esperado, pero es debido a que el servicio del backend esta alojado en otro servidor y este debe ser activado, tenga paciencia"
+    }
+}

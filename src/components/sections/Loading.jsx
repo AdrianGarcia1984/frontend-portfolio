@@ -1,8 +1,10 @@
 import React, { useState } from 'react'
 import './loading.css'
+import { useTranslation } from 'react-i18next'
 
 const Loading = () => {
   const [esperar,setEsperar]=useState(false)
+  const {t}= useTranslation()
 
   setTimeout(function(){
     setEsperar(true)      
@@ -16,9 +18,9 @@ const Loading = () => {
         </div>    
       </div>
         <div>
-          <h3 className='border-2 px-4 py-2 mb-2 text-gray-500'>recuperando archivos del servidor</h3>
+          <h3 className='border-2 px-4 py-2 mb-2 text-gray-500'>{t("loading.message1")}</h3>
             {esperar&&
-            <h3 className='border-2 px-4 py-2 text-gray-500'>si,  esta tardando mas de lo esperado, pero es debido a que el servicio del backend esta alojado en otro servidor y este debe ser activado, tenga paciencia</h3>        
+            <h3 className='border-2 px-4 py-2 text-gray-500'>{t("loading.message2")}</h3>        
             }  
         </div>   
     </div>

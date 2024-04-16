@@ -1,15 +1,17 @@
 import React from 'react'
+import { useTranslation } from 'react-i18next';
 
 const Contact = () => {
+  const { t } = useTranslation();
   return (
         <div className="container my-24 px-6 mx-auto">
 
 <section className="mb-32 text-gray-800">
   <div className="flex flex-wrap">
     <div className="grow-0 shrink-0 basis-auto mb-6 md:mb-0 w-full md:w-6/12 px-3 lg:px-6">
-      <h2 className="text-3xl font-bold mb-6">Contacto</h2>
+      <h2 className="text-3xl font-bold mb-6">{t("contact.title")}</h2>
       <p className="text-gray-500 mb-6">
-        Te agradezco por querer contactarme, espero tu mensaje.
+      {t("contact.legend")}
       </p>
       <p className="text-gray-500 mb-2">Medellin-Antioquia, Colombia</p>
       <p className="text-gray-500 mb-2">+57 300 602 2624</p>
@@ -36,7 +38,7 @@ const Contact = () => {
             focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" 
             id="name"
             name="name"
-            placeholder="Nombre"/>
+            placeholder={t("contact.name")}/>
         </div>
         <div className="form-group mb-6">
           <input 
@@ -57,7 +59,7 @@ const Contact = () => {
             focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" 
             id="email"
             name="email"
-            placeholder="Email"/>
+            placeholder={t("contact.email")}/>
         </div>
         <div className="form-group mb-6">
           <textarea 
@@ -79,17 +81,8 @@ const Contact = () => {
           id="mensaje"
           name="mensaje"
           rows="3" 
-          placeholder="Mensaje"></textarea>
+          placeholder={t("contact.message")}></textarea>
         </div>
-        {/* <div className="form-group form-check text-center mb-6">
-          <input type="checkbox"
-            className="form-check-input appearance-none h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain mr-2 cursor-pointer"
-            id="emailCheked"
-            name="_cc"
-            value={document.getElementById("email")}
-            />
-          <label className="form-check-label inline-block text-gray-800" htmlFor="emailCheked">enviame una copia</label>
-        </div> */}
         <button type="submit" className="
           w-full
           px-6
@@ -107,7 +100,7 @@ const Contact = () => {
           active:bg-blue-800 active:shadow-lg
           transition
           duration-150
-          ease-in-out">enviar</button>
+          ease-in-out">{t("contact.btn")}</button>
         <input type="hidden" name="_next" value="https://adriangarcia.co"></input>
         <input type="hidden" name="_captcha" value="false"></input>
 

@@ -1,0 +1,56 @@
+{
+    "sidebar":{
+        "title":"fullstack developer and QA-Automation",
+        "about":"About me",
+        "description":"Fullstack web developer and QA-Automation, enthusiastic about learning and improving my knowledge, I love learning something new every day",
+        "btn":"download resume"
+    },
+    "home":{
+        "who":"who i am",
+        "about":"Passionate about technology and programming, since 2022 in the role of web development, systems technologist since 2014, graduated from SENA, with a diploma in FullStack web development, QA-Automation, and different courses that have allowed me to acquire knowledge in the world of software development.",
+        "about2":"In addition to this, after working 21 years at INPEC, 8 of these years I was the leader in the systems office of one of its headquarters, which allows me to have demonstrable experience in fields such as systems administration, resource administration human, local communication networks (planning, execution, configuration, start-up and maintenance), administration of Oracle databases (certified diploma with the Cooperative University of Colombia), among other knowledge related to computer maintenance, etc."
+    },
+    "navbar":{
+        "home":"Home",
+        "proyects":"Projects",
+        "contact":"Contact",
+        "users":"Users",
+        "api":"Api",
+        "more":"More Projects"
+    },
+    "contact":{
+        "title":"Contact",
+        "legend":"I thank you for wanting to contact me, I await your message.",
+        "name":"Name",
+        "email":"Email",
+        "message":"Message",
+        "btn":"Send"
+    },
+    "users":{
+        "title":"REGISTER USER APP",
+        "text1":"Small user registration CRUD application.",
+        "text2":"Description: Application connected to a Backend is developed in GO with Fiber as a framework, which connects to a database deployed in Mongo-DB.",
+        "tech":"Technologies: GO, ReactJs, Javascript, TailwindCSS, MongoDB.",
+        "register":"Register",
+        "name":"Name",
+        "email":"Email",
+        "btn":"save",
+        "titletable":"User Table",
+        "date":"Creation Date",
+        "action":"Action"
+    },
+    "api":{
+        "title":"RICK AND MORTY APP",
+        "description":"Search for your favorite character in the Rick and Morty API.",
+        "description2":"In this part the RICK and MORTY API is consumed and rendered in a small Card.",
+        "tech":"Technologies: TailwindCSS, reactJS, JavaScript.",
+        "find":"Find a character"
+    },
+    "footer":{
+        "developed":"developed by"
+    },
+    "loading":{
+        "message1":"recovering files from server",
+        "message2":"Yes, it is taking longer than expected, but it is because the backend service is hosted on another server and it must be activated, be patient"
+    }
+}

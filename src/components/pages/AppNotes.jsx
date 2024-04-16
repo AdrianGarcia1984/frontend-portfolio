@@ -1,10 +1,11 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useTransition } from 'react'
 import {FaTrash, FaEdit} from "react-icons/fa";
 import Formulario from '../sections/Formulario';
 import Loading from '../sections/Loading';
+import { useTranslation } from 'react-i18next';
 
 function AppNotes() {
-    
+    const {t} = useTranslation()
     const [edit, setEdit] = useState(false);
     const [dataForm, SetDataForm] = useState({ name: "", email: ""})
     const [users, setUsers] = useState([])
@@ -20,7 +21,6 @@ function AppNotes() {
 
     const handleSubmit = async () => {
         try {
-            console.log(dataForm)
             const response = await fetch(
                 (import.meta.env.VITE_API + '/users'), {
                 method: 'POST',
@@ -57,8 +57,7 @@ function AppNotes() {
     }
 
     const handleUpdate = async (id)=>{
-        try {
-            
+        try {            
             const id = localStorage.getItem('id')
             const response = await fetch(
                 (import.meta.env.VITE_API + '/users/'+id), {
@@ -104,20 +103,20 @@ function AppNotes() {
 
     return (
         <section className="App py-8">
-            <h1 className='text-2xl text-gray-800 font-bold mb-4 '>APLICACION DE REGISTRO DE USUARIOS</h1>
-            <p className='text-gray-500 md:text-left m-2 text-justify'>Pequeña aplicacion CRUD de registro de usuarios.</p>
-            <p className='text-gray-500 md:text-left m-2 text-justify'>Descripcion: Aplicacion conectada a un Backend es desarrollado en GO con Fiber como framework, la cual se conecta a una base de datos desarrollada en Mongo-DB.</p>
-            <p className='text-gray-500 md:text-left m-2 text-justify'>Tecnologias: GO, ReactJs, Javascript, TailwindCSS, MongoDB.</p>
-            <h2 className='text-2xl text-gray-800 font-bold mb-4' >Registro</h2>
+            <h1 className='text-2xl text-gray-800 font-bold mb-4 '>{t("users.title")}</h1>
+            <p className='text-gray-500 md:text-left m-2 text-justify'>{t("users.text1")}</p>
+            <p className='text-gray-500 md:text-left m-2 text-justify'>{t("users.text2")}</p>
+            <p className='text-gray-500 md:text-left m-2 text-justify'>{t("users.tech")}</p>
+            <h2 className='text-2xl text-gray-800 font-bold mb-4' >{t("users.register")}</h2>
             <section className='form-crud sm:w-auto mt-2'>
                 <form className='w-full max-w-sm mb-2' onSubmit={action} >
                     <div className='md:flex md:items-center mb-6'>
                         <div className='md:w-1/3'>
-                            <label className='block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4' htmlFor="name">Nombre
+                            <label className='block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4' htmlFor="name">{t("users.name")}
                             </label>
                         </div>
                         <div className='md:w-2/3'>
-                            <input className='bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-blue-500' type="name" placeholder='nombre' 
+                            <input className='bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-blue-500' type="name" placeholder={t("users.name")} 
                                value={dataForm.name} 
                                onChange={e => SetDataForm({ ...dataForm, name: e.target.value })}
                              id="name" required></input>
@@ -125,11 +124,11 @@ function AppNotes() {
                     </div>
                     <div className='md:flex md:items-center mb-6'>
                         <div className='md:w-1/3'>
-                            <label className='block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4' htmlFor="name">Email
+                            <label className='block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4' htmlFor="name">{t("users.email")}
                             </label>
                         </div>
                         <div className='md:w-2/3'>
-                            <input className='bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-blue-500' type="email" placeholder='email' 
+                            <input className='bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-blue-500' type="email" placeholder={t("users.email")} 
                               value={dataForm.email} 
                               onChange={e => SetDataForm({ ...dataForm, email: e.target.value })}
                             required></input>
@@ -138,27 +137,23 @@ function AppNotes() {
                     <div className='md:flex md:items-center'>
                         <div className='md:w-1/3'></div>
                         <div className='md:w-2/3'>
-                            <button className='shadow bg-blue-500 hover:bg-blue-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded' type="submit">Guardar</button>
+                            <button className='shadow bg-blue-500 hover:bg-blue-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded' type="submit">{t("users.btn")}</button>
                         </div>
                     </div>
                     <br />
                 </form>
             </section>
-
-            {/* <Formulario
-            
-                /> */}
-            <h2 className='text-2xl text-gray-800 font-bold mb-4 ' >Tabla de Usuarios Registrados</h2>
+            <h2 className='text-2xl text-gray-800 font-bold mb-4 ' >{t("users.titletable")}</h2>
             <section className=' md:w-auto'>
                 {
                     !status? <Loading/>:
                     <table className='sm:table-auto md:table-fixed text-gray-700 shadow md:w-auto'>
                     <thead>
                         <tr>
-                            <th className='border-2 w-1/4 px-4 py-2'>Nombre</th>
-                            <th className='border-2 w-1/4 px-4 py-2'>Email</th>
-                            <th className='border-2 w-1/4 px-4 py-2'>Fecha Creacion</th>
-                            <th className='border-2 w-1/4 px-4 py-2'>Accion</th>
+                            <th className='border-2 w-1/4 px-4 py-2'>{t("users.name")}</th>
+                            <th className='border-2 w-1/4 px-4 py-2'>{t("users.email")}</th>
+                            <th className='border-2 w-1/4 px-4 py-2'>{t("users.date")}</th>
+                            <th className='border-2 w-1/4 px-4 py-2'>{t("users.action")}</th>
                         </tr>
                     </thead>
                     <tbody>

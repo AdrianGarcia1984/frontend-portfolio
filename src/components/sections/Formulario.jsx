@@ -1,7 +1,7 @@
 import React from 'react'
 
 const Formulario = (props) => {
-    console.log(props)
+
     const action = () => {
 
     }
